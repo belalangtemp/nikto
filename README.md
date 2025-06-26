@@ -1,9 +1,16 @@
-Nikto web server scanner - https://cirt.net/Nikto2
+
+nikto
+=====
+[![alt text](https://cirt.net/images/patreon.png "Become a patron of Nikto!")](https://www.patreon.com/sullo)
+
+
+Nikto web server scanner  - https://cirt.net/Nikto2 
 
 Full documentation - https://github.com/sullo/nikto/wiki
 
 Run normally:
 
+~~~
 git clone https://github.com/sullo/nikto
 # Main script is in program/
 cd nikto/program
@@ -11,9 +18,11 @@ cd nikto/program
 ./nikto.pl -h http://www.example.com
 # Run using perl (if you forget to chmod)
 perl nikto.pl -h http://www.example.com
+~~~
 
 Run as a Docker container:
 
+~~~bash
 git clone https://github.com/sullo/nikto.git
 cd nikto
 docker build -t sullo/nikto .
@@ -23,9 +32,11 @@ docker run --rm sullo/nikto
 docker run --rm sullo/nikto -h http://www.example.com
 # To save the report in a specific format, mount /tmp as a volume:
 docker run --rm -v $(pwd):/tmp sullo/nikto -h http://www.example.com -o /tmp/out.json
+~~~
 
 Basic usage:
 
+```
    Options:
        -ask+               Whether to ask about submitting updates
                                yes   Ask about each (default)
@@ -118,3 +129,22 @@ Basic usage:
        -Version           Print plugin and database versions
        -vhost+            Virtual host (for Host header)
               + requires a value
+```
+
+License
+=======
+Copyright (C) 2001 Chris Sullo
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; version 2
+of the License only.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to
+Free Software Foundation, 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
